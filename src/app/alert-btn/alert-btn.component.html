@@ -1,0 +1,53 @@
+<button *ngIf="showBtn" (click)="showAlert()">Click here</button>
+
+{{ value }}
+
+<button (click)="toggleMessage()">Toggle</button>
+
+<p *ngIf="toggle">This is a toggle</p>
+
+<ul>
+  <li *ngFor="let food of foodItems">
+    <span class="status" [class.color-red]="food.type === 'nonveg'"></span>
+    {{ food.name }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let food of foodItems">
+    <span
+      class="status"
+      [ngClass]="{
+        'color-red': food.type === 'nonveg',
+        'color-blue': food.type === 'nonveg'
+      }"
+    ></span>
+    {{ food.name }}
+  </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let food of foodItems">
+    <span
+      class="status"
+      [style.backgroundColor]="(food.type === 'nonveg')? 'red' : 'green'"
+    ></span>
+    {{ food.name }}
+  </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let food of foodItems">
+    <span
+      class="status"
+      [ngStyle]="{backgroundColor:(food.type === 'nonveg')? 'red' : 'green',borderRadius:'25%'}"
+    ></span>
+    {{ food.name }}
+  </li>
+</ul>
+
+{{foodItems | json}}
+
+{{foodItems | json |  uppercase}}

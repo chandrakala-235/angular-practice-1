@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-first-ng-app';
+  title = 'Interpolation';
+  body = 'This is a body';
+
+
+  constructor() {
+  }
+
+  handleInput(event) {
+    console.log(event.target.value);
+  }
+
 }
